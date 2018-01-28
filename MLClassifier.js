@@ -1,7 +1,7 @@
-var natural = require('natural')
-var classifier = new natural.BayesClassifier()
+const natural = require('natural')
+const classifier = new natural.BayesClassifier()
 
-var trainingData = [
+const trainingData = [
   { text: 'RE: Canadian drugs now on sale', label: 'spam' },
   { text: 'Earn more from home', label: 'spam' },
   { text: 'Information now available!!!', label: 'spam' },
@@ -15,7 +15,7 @@ var trainingData = [
   { text: 'Drinks on Monday?', label: 'notspam' }
 ]
 
-var testData = [
+const testData = [
   { text: 'Drugs for cheap', label: 'spam' },
   { text: 'Next deadline due Monday', label: 'notspam' },
   { text: 'Meet me at home?', label: 'notspam' },
@@ -29,7 +29,7 @@ trainingData.forEach(function (item) {
 classifier.train()
 
 testData.forEach(function (item) {
-  var labelGuess = classifier.classify(item.text)
+  const labelGuess = classifier.classify(item.text)
   console.log('\n')
   console.log(item.text)
   console.log('Label:', labelGuess)
